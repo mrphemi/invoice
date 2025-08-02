@@ -21,7 +21,7 @@ const preview: Preview = {
   decorators: [
     (Story) => {
       return (
-        <div className={`${spartan.className} antialiased`}>
+        <div className={`${spartan.className} antialiased p-4`}>
           <Story />
         </div>
       );

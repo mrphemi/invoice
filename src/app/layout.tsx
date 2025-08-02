@@ -3,7 +3,6 @@ import { League_Spartan } from "next/font/google";
 import "./globals.css";
 
 const spartan = League_Spartan({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 

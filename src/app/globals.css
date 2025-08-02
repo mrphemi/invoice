@@ -1,26 +1,42 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-dark-bg: #141625;
+  --color-light-bg: #f8f8fb;
+  --color-primary-indigo: #7c5dfa;
+  --color-accent-lavender: #9277ff;
+  --color-pale-indigo: #f9fafe;
+  --color-rich-navy: #1e2139;
+  --color-steel-navy: #373b53;
+  --color-deep-slate: #252945;
+  --color-indigo-tint: #dfe3fa;
+  --color-muted-blue: #888eb0;
+  --color-cool-blue: #7e88c3;
+  --color-midnight-black: #0c0e16;
+  --color-error-red: #ec5757;
+  --color-soft-rose: #ff9797;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@utility heading-h1 {
+  @apply text-[32px] leading-[36px] tracking-[-0.01em] font-bold;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility heading-h2 {
+  @apply text-[20px] leading-[22px] tracking-[-0.063em] font-bold;
+}
+
+@utility heading-h3 {
+  @apply text-[16px] leading-[24px] tracking-[-0.08em] font-bold;
+}
+
+@utility heading-h3-small {
+  @apply text-[12px] leading-[15px] tracking-[-0.025em] font-bold;
+}
+
+@utility body-1 {
+  @apply text-[12px] leading-[15px] tracking-[-0.025em] font-medium;
+}
+
+@utility body-2 {
+  @apply text-[11px] leading-[18px] tracking-[-0.023em] font-medium;
 }
