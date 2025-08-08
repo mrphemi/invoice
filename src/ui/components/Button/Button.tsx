@@ -2,19 +2,21 @@ import Link from "next/link";
 
 import { cn } from "@/ui/utils";
 
-type ButtonType = "primary" | "secondary" | "tertiary" | "danger" | "ghost";
+type ButtonTheme = "primary" | "secondary" | "tertiary" | "danger" | "ghost";
 
 type ButtonProps = {
   as?: "button" | "link";
   href?: string;
-  type?: ButtonType;
+  theme?: ButtonTheme;
+  type?: "button" | "submit" | "reset";
   label: string;
   onClick?: () => void;
   className?: string;
   icon?: React.ReactNode;
+  disabled?: boolean;
 };
 
-const ButtonClassMap: Record<ButtonType, string> = {
+const ButtonClassMap: Record<ButtonTheme, string> = {
   primary: "bg-primary-indigo text-white hover:bg-accent-lavender",
   secondary:
     "bg-pale-indigo text-cool-blue hover:bg-indigo-tint dark:bg-deep-slate dark:hover:bg-white",
@@ -31,9 +33,11 @@ const Button = ({
   label,
   as,
   href,
-  type = "primary",
+  theme = "primary",
+  type = "button",
   icon,
   onClick,
+  disabled = false,
   className = "",
 }: ButtonProps) => {
   if (as === "link") {
@@ -42,7 +46,7 @@ const Button = ({
         href={href as string}
         className={cn(
           commonStyles,
-          ButtonClassMap[type],
+          ButtonClassMap[theme],
           icon ? "gap-4" : "",
           className
         )}
@@ -57,10 +61,12 @@ const Button = ({
       onClick={onClick}
       className={cn(
         commonStyles,
-        ButtonClassMap[type],
+        ButtonClassMap[theme],
         icon ? "gap-4" : "",
         className
       )}
+      disabled={disabled}
+      type={type}
     >
       {icon && <span className="">{icon}</span>}
       <span>{label}</span>

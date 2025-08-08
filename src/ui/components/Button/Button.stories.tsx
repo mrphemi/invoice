@@ -3,11 +3,9 @@ import type { Meta, StoryObj } from "@storybook/nextjs";
 import Plus from "../../icons/plus";
 
 // import { fn } from "storybook/test";
-
 import Button from "./Button";
 
 const meta = {
-  title: "Example/Button",
   component: Button,
   parameters: {
     layout: "fullscreen",
@@ -28,7 +26,7 @@ const PlusIcon = () => {
 export const Primary: Story = {
   args: {
     as: "button",
-    type: "primary",
+    theme: "primary",
     label: "Mark as Paid",
     onClick: () => alert("Button clicked"),
   },
@@ -38,7 +36,7 @@ export const PrimaryLink: Story = {
   args: {
     as: "link",
     href: "#",
-    type: "primary",
+    theme: "primary",
     label: "Mark as Paid",
   },
 };
@@ -55,7 +53,7 @@ export const NewInvoiceExample: Story = {
 export const Secondary: Story = {
   args: {
     as: "button",
-    type: "secondary",
+    theme: "secondary",
     label: "Edit",
     onClick: () => alert("Button clicked"),
   },
@@ -64,7 +62,7 @@ export const Secondary: Story = {
 export const Tertiary: Story = {
   args: {
     as: "button",
-    type: "tertiary",
+    theme: "tertiary",
     label: "Save as Draft",
     onClick: () => alert("Button clicked"),
   },
@@ -73,7 +71,7 @@ export const Tertiary: Story = {
 export const Danger: Story = {
   args: {
     as: "button",
-    type: "danger",
+    theme: "danger",
     label: "Delete",
     onClick: () => alert("Button clicked"),
   },
@@ -82,7 +80,7 @@ export const Danger: Story = {
 export const Ghost: Story = {
   args: {
     as: "button",
-    type: "ghost",
+    theme: "ghost",
     label: "+ Add New Item",
     onClick: () => alert("Button clicked"),
   },
