@@ -1,0 +1,22 @@
+import { SVGProps } from "react";
+
+const Arrow = ({ className }: SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      width="6"
+      height="11"
+      viewBox="0 0 6 11"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M1.11377 0.88623L5.34167 5.11413L1.11377 9.34203"
+        stroke="#7C5DFA"
+        strokeWidth="2"
+      />
+    </svg>
+  );
+};
+
+export default Arrow;

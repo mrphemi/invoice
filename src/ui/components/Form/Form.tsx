@@ -5,10 +5,12 @@ import { Controller, type Control, type UseFormTrigger } from "react-hook-form";
 import Input from "./Input";
 import FormSelect from "./Select";
 import Button from "../Button/Button";
+import { DatePicker } from "./DatePicker";
 
 export type FormInputs = {
   street: string;
   terms: string;
+  date: Date | undefined;
 };
 
 export type FormProps = {
@@ -75,6 +77,22 @@ export const Form = ({
             {...field}
             onChange={(value) => field.onChange(value)}
             error={error?.message}
+          />
+        )}
+      />
+
+      <Controller
+        name="date"
+        control={control}
+        rules={{
+          required: "Please select a date",
+        }}
+        render={({ field, fieldState: { error } }) => (
+          <DatePicker
+            label="Issue Date"
+            error={error?.message}
+            selected={field.value}
+            onSelect={field.onChange}
           />
         )}
       />

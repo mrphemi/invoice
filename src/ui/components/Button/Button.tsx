@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { cn } from "@/ui/utils";
+import { cn } from "@/lib/utils";
 
 type ButtonTheme = "primary" | "secondary" | "tertiary" | "danger" | "ghost";
 

@@ -15,7 +15,11 @@ type Story = StoryObj<typeof meta>;
 export const Form: Story = {
   render: (args) => {
     const { control, trigger, handleSubmit } = useForm<FormInputs>({
-      defaultValues: {},
+      defaultValues: {
+        street: "",
+        terms: "",
+        date: undefined,
+      },
     });
 
     return (
